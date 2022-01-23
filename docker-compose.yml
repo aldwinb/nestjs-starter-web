@@ -1,0 +1,11 @@
+version: "3.9"  # optional since v1.27.0
+services:
+  starter-web:
+    build: .
+    container_name: nestjs-starter-web-1
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/home/app
+    working_dir: /home/app
+    entrypoint: ["tail", "-f", "/dev/null"]
